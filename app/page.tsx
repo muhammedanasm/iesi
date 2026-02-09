@@ -1,12 +1,9 @@
 import AboutSection from "@/components/home/AboutSection";
 import ClientSection from "@/components/home/ClientSection";
-import EthosSection from "@/components/home/EthosSection";
 import FeatureCards from "@/components/home/FeatureCards";
 import Hero from "@/components/home/Hero";
 import HorizontalServices from "@/components/home/HorizontalServices";
-import IdentitySection from "@/components/home/IdentitySection";
 import ProjectsSection from "@/components/home/ProjectsSection";
-import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialSection from "@/components/home/TestimonialSection";
 
 export default function Home() {
