@@ -207,7 +207,7 @@ const HorizontalServices = () => {
 
           {/* FINAL CTA */}
           <div className="w-[40vw] flex-shrink-0 flex flex-col items-center justify-center px-10">
-            <button className="group relative flex flex-col items-center gap-8 text-center">
+            <button className="group relative flex flex-col items-center gap-8 text-center cursor-pointer">
               <div className="w-32 h-32 rounded-full border border-white/20 flex items-center justify-center text-white transition-all duration-700 group-hover:bg-[#C69A59] group-hover:border-[#C69A59] group-hover:scale-110">
                 <span className="text-4xl transition-transform duration-500 group-hover:rotate-[-45deg]">
                   →

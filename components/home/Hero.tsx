@@ -105,7 +105,7 @@ const Hero = () => {
                   </p>
 
                   <div className="hero-anim">
-                    <button className="flex items-center gap-5 bg-white text-black pl-2 pr-10 py-2 rounded-full hover:bg-[#C69A59] hover:text-white transition-all duration-500 group shadow-lg">
+                    <button className="flex items-center gap-5 bg-white text-black pl-2 pr-10 py-2 rounded-full hover:bg-[#C69A59] hover:text-white transition-all duration-500 group shadow-lg cursor-pointer">
                       <div className="w-12 h-12 rounded-full bg-[#C69A59] group-hover:bg-black flex items-center justify-center text-white transition-all">
                         <span className="text-xl">→</span>
                       </div>

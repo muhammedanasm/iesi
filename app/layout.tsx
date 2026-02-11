@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Jost, Tenor_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import SmoothScroll from "@/components/ui/SmoothScroll";
-import Footer from "@/components/layout/Footer";
+import MainWrapper from "@/components/layout/MainWrapper";
 
 // Fonts setup
 const jost = Jost({
@@ -20,8 +18,8 @@ const tenor = Tenor_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Lumoria | Professional Showcase Website",
-  description: "Premium Architecture and Design Showcase",
+  title: "IESI | Professional Showcase Website",
+  description: "Premium Engineering and Design Showcase",
 };
 
 export default function RootLayout({
@@ -30,16 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${jost.variable} ${tenor.variable} font-sans bg-light text-dark antialiased`}
       >
-        <SmoothScroll>
-          <Navbar />
-          {children}
-          {/* Footer can be added here later */}
-          <Footer />
-        </SmoothScroll>
+        <MainWrapper>{children}</MainWrapper>
       </body>
     </html>
   );

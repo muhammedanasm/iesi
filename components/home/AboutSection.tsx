@@ -163,13 +163,13 @@ const AboutSection = () => {
           </div>
 
           <div className="content-reveal">
-            <button className="group relative flex items-center gap-10 bg-transparent">
+            <button className="group relative flex items-center gap-10 bg-transparent cursor-pointer">
               <div className="relative w-16 h-16 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 group-hover:bg-[#161616]">
                 <span className="text-2xl transition-all duration-500 group-hover:text-white group-hover:translate-x-2">
                   →
                 </span>
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-start ">
                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">
                   Discover
                 </span>

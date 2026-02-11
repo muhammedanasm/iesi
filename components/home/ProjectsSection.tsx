@@ -384,7 +384,7 @@ const ProjectsSection = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`flex items-center px-7 py-3 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-500 border ${
+              className={`flex items-center px-7 py-3 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-500 border cursor-pointer ${
                 filter === cat
                   ? "bg-[#C69A59] border-[#C69A59] text-white shadow-xl shadow-[#C69A59]/20"
                   : "bg-transparent border-black/5 text-gray-500 hover:border-[#C69A59] hover:text-[#C69A59]"
