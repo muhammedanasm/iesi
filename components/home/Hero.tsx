@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Pagination } from "swiper/modules"; // Autoplay ഒഴിവാക്കി
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 // IES International - 3 Premium Engineering Focus Images

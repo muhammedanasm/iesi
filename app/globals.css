@@ -28,3 +28,123 @@ body {
   color: var(--foreground);
   font-family: var(--font-jost);
 }
+
+/* --- PREMIUM SWEETALERT MEDIUM SIZE --- */
+
+.premium-popup {
+  border-radius: 45px !important;
+  padding: 1rem !important;
+  width: 600px !important;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12) !important;
+  background-color: #fcfcfc !important;
+}
+
+.modal-header {
+  text-align: center;
+  /* margin-bottom: 1.5rem; */
+}
+
+.modal-tag {
+  color: #c69a59;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-weight: 900;
+  display: block;
+  /* margin-bottom: 0.5rem; */
+}
+
+.modal-title {
+  font-family: serif;
+  font-size: 32px; /* ഫോണ്ട് സൈസ് കുറച്ചു */
+  color: #161616;
+  line-height: 1.2;
+}
+
+.premium-swal-form {
+  text-align: left;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem; /* ഗ്യാപ്പ് കുറച്ചു */
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+.premium-btn {
+  cursor: pointer !important;
+}
+
+.field label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 900;
+  color: #aaa;
+  margin-left: 5px;
+}
+
+.premium-swal-form input,
+.premium-swal-form select,
+.premium-swal-form textarea {
+  background: #f8f8f8 !important; /* ലൈറ്റ് ബാക്ക്ഗ്രൗണ്ട് */
+  border: 1px solid rgba(0, 0, 0, 0.03) !important;
+  border-radius: 15px !important;
+  padding: 0.9rem 1.2rem !important; /* ഇൻപുട്ട് പാഡിംഗ് കുറച്ചു */
+  font-size: 13px !important;
+  color: #161616 !important;
+  outline: none !important;
+  width: 100%;
+}
+
+/* Button style refined for medium size */
+.premium-btn {
+  background: #161616 !important;
+  color: white !important;
+  width: 100%;
+  border-radius: 100px !important;
+  padding: 1rem !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.25em !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  transition: all 0.4s ease !important;
+}
+
+.premium-btn:hover {
+  background: #c69a59 !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .premium-popup {
+    width: 90% !important;
+    border-radius: 35px !important;
+    padding: 1.5rem !important;
+  }
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SweetAlert Confirm Button ഉള്ളിലെ ലോഡർ ഗോൾഡൻ ആക്കാൻ */
+.swal2-styled.swal2-confirm.swal2-loading {
+  padding: 0.8rem 2rem !important;
+}
+
+/* സ്പിന്നറിന്റെ കളർ ഗോൾഡൻ ആക്കുന്നു */
+.swal2-loader {
+  border-color: #c69a59 transparent #c69a59 transparent !important;
+}
