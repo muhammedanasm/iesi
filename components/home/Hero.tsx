@@ -1,7 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Pagination } from "swiper/modules"; // Autoplay ഒഴിവാക്കി
+import Image from "next/image";
+import { EffectFade, Pagination, Autoplay } from "swiper/modules"; // Autoplay ഒഴിവാക്കി
 import "swiper/css";
 import "swiper/css/effect-fade";
 import gsap from "gsap";
@@ -9,28 +10,25 @@ import gsap from "gsap";
 // IES International - 3 Premium Engineering Focus Images
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070",
-    marqueeText: "ENGINEERING EXCELLENCE",
-    title: "Shaping Spaces,",
-    titleSecondary: "Inspiring Lives",
-    desc: "Delivering high-performance MEP and HVAC solutions with precision and integrity across the Sultanate of Oman.",
+    image: "/images/engineering.webp",
+    marqueeText: "MECHANICAL • ELECTRICAL • PLUMBING",
+    title: "Engineering Excellence,",
+    titleSecondary: "Precision Integration",
+    desc: "Delivering high-performance MEP solutions with uncompromising safety and technical integrity across the Sultanate of Oman.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=2070",
-    marqueeText: "INNOVATIVE SOLUTIONS",
-    title: "Advanced Systems,",
-    titleSecondary: "Built for Future",
-    desc: "From concept to completion, we provide seamless integration of electrical and mechanical systems.",
+    image: "/images/hvacbanner.webp",
+    marqueeText: "ADVANCED HVAC • CLIMATE CONTROL",
+    title: "Optimized Cooling,",
+    titleSecondary: "Sustainable Comfort",
+    desc: "From ducted split to industrial VRF systems, we engineer climate solutions for maximum efficiency and long-term performance.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=2070",
-    marqueeText: "TECHNICAL PRECISION",
-    title: "Uncompromising Quality,",
-    titleSecondary: "Sustainable Design",
-    desc: "Our approach transforms concepts into meaningful spaces, blending functionality with safety and technical excellence.",
+    image: "/images/elv.webp",
+    marqueeText: "FIRE SAFETY • ELV • AUTOMATION",
+    title: "Intelligent Systems,",
+    titleSecondary: "Trusted Security",
+    desc: "Protecting lives and empowering businesses through robust fire safety and smart low-voltage technical environments.",
   },
 ];
 
@@ -63,10 +61,15 @@ const Hero = () => {
       */}
       <div className="relative w-full h-[75vh] md:h-[80vh] overflow-hidden rounded-[40px] md:rounded-[80px] bg-[#1a1a1a] shadow-2xl">
         <Swiper
-          modules={[EffectFade, Pagination]} // Autoplay നീക്കം ചെയ്തു
+          modules={[EffectFade, Pagination, Autoplay]} // Autoplay നീക്കം ചെയ്തു
           effect="fade"
           fadeEffect={{ crossFade: true }}
           speed={1200}
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           onSlideChangeTransitionStart={onSlideChange}
           pagination={{ el: ".custom-dots", clickable: true }}
           className="h-full w-full"
@@ -74,11 +77,24 @@ const Hero = () => {
           {slides.map((slide, index) => (
             <SwiperSlide key={index} className="w-full h-full relative">
               {/* Background Image Container */}
-              <div
+              {/* <div
                 className="absolute inset-0 bg-cover bg-center animate-slow-zoom"
                 style={{ backgroundImage: `url('${slide.image}')` }}
               >
                 <div className="absolute inset-0 bg-black/40"></div>
+              </div> */}
+              {/* IMAGE AREA - USING NEXT.JS IMAGE COMPONENT */}
+              <div className="absolute inset-0 w-full h-full">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill // കണ്ടെയ്നറിൽ ഫുൾ ആയി നിൽക്കാൻ
+                  priority={index === 0} // ആദ്യത്തെ ഇമേജ് വേഗത്തിൽ ലോഡ് ആകാൻ
+                  className="object-cover animate-slow-zoom" // പണ്ടത്തെ അതേ അനിമേഷൻ ക്ലാസ്
+                  sizes="100vw"
+                />
+                {/* Overlay for better text visibility */}
+                <div className="absolute inset-0 bg-black/40 z-10"></div>
               </div>
 
               {/* CONTENT AREA */}

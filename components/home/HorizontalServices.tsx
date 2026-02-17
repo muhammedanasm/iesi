@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,57 +12,49 @@ const services = [
     id: "01",
     title: "MEP Design & Build",
     desc: "Complete engineering and execution of Mechanical, Electrical, and Plumbing systems.",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070",
+    image: "/images/mvpdesign.webp",
   },
   {
     id: "02",
     title: "Electrical Systems",
     desc: "Comprehensive LV installations, power distribution, and uninterrupted supply systems.",
-    image:
-      "https://images.unsplash.com/photo-1558389186-438424b00a32?q=80&w=2070",
+    image: "/images/electric.webp",
   },
   {
     id: "03",
     title: "HVAC & Cooling",
     desc: "Advanced central AC, VRF, and industrial cooling solutions for maximum efficiency.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070",
+    image: "/images/hvac.webp",
   },
   {
     id: "04",
     title: "Fire & Safety",
     desc: "Compliant fire suppression, detection, and alarm systems for full safety coverage.",
-    image:
-      "https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070",
+    image: "/images/fire.webp",
   },
   {
     id: "05",
     title: "ELV & Automation",
     desc: "Intelligent low-voltage systems for security, CCTV, and robust connectivity.",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070",
+    image: "/images/automation.webp",
   },
   {
     id: "06",
     title: "Plumbing Installations",
     desc: "Complete water supply, drainage, and sanitary systems for all building types.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070",
+    image: "/images/plumbing.webp",
   },
   {
     id: "07",
     title: "Kitchen Ventilation",
     desc: "Commercial hood exhaust systems and ecology units for industrial kitchens.",
-    image:
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070",
+    image: "/images/kitchen.webp",
   },
   {
     id: "08",
     title: "Maintenance (AMC)",
     desc: "Preventive and corrective maintenance for MEP, HVAC, and ELV systems.",
-    image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070",
+    image: "/images/amc.webp",
   },
 ];
 
@@ -161,10 +154,17 @@ const HorizontalServices = () => {
               className="service-card w-[85vw] md:w-[28vw] h-[580px] bg-white rounded-[45px] p-4 flex flex-col group/card transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.6)]"
             >
               <div className="relative h-[60%] w-full overflow-hidden rounded-[35px]">
-                <div
+                {/* <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover/card:scale-110"
                   style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
+                ></div> */}
+                <Image
+                  src={item.image}
+                  alt={item.title} // SEO-യ്ക്ക് അൾട്ട് ടെക്സ്റ്റ് അത്യാവശ്യമാണ്
+                  fill // കണ്ടെയ്നറിന് ഉള്ളിൽ നിറഞ്ഞു നിൽക്കാൻ
+                  className="object-cover transition-transform duration-1000 group-hover/card:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white text-[10px] font-bold">
                   {item.id}
                 </div>

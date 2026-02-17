@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -86,13 +87,21 @@ const AboutSection = () => {
         {/* Left Side: Modern Image Composition (Occupies 5 columns) */}
         <div className="lg:col-span-5 relative group">
           <div className="about-img-mask relative w-full aspect-[4/5] overflow-hidden rounded-tr-[150px] rounded-bl-[150px] shadow-2xl">
-            <div
+            {/* <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
               style={{
                 backgroundImage:
                   "url('https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2070')",
               }}
-            ></div>
+            ></div> */}
+            <Image
+              src="/images/about.webp" // നിങ്ങളുടെ പുതിയ ഇമേജ് പാത്ത്
+              alt="IES Engineering Excellence"
+              fill
+              priority
+              className="object-cover transition-transform duration-1000 group-hover:scale-110  group-hover:grayscale-0"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
 
@@ -107,76 +116,75 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Right Side: Re-imagined Content (Occupies 7 columns) */}
-        <div className="lg:col-span-7 lg:pl-12 about-content-trigger">
+        {/* Right Side: Content for Professionals */}
+        <div className="lg:col-span-7 lg:pl-12">
           <div className="content-reveal mb-6 flex items-center gap-4">
             <div className="w-12 h-[1px] bg-[#C69A59]"></div>
             <span className="text-[#C69A59] font-bold text-[10px] tracking-[0.5em] uppercase">
-              The Sultanate's Preferred Partner
+              Integrated MEP Coordination
             </span>
           </div>
 
-          <h2 className="content-reveal text-5xl md:text-7xl font-sans leading-[1] text-[#161616] mb-10 tracking-tight">
-            Crafting the <br />
-            <span className="font-sans font-light text-[#C69A59]/80">
-              Soul of Systems
+          <h2 className="content-reveal text-5xl md:text-7xl font-sans font-bold leading-[1] text-[#161616] mb-10 tracking-tighter">
+            Bridging Design & <br />
+            <span className=" font-light text-[#C69A59]/80">
+              Precision Execution
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-            <div className="md:col-span-12">
-              <p className="content-reveal text-gray-500 text-lg leading-relaxed max-w-2xl font-light">
-                Established in 2021, IES International combines decades of
-                technical heritage with the precision of modern
-                electromechanical practices. We don't just install systems; we
-                engineer{" "}
-                <span className="text-black font-medium underline decoration-[#C69A59]/40 underline-offset-8">
-                  seamless environments
-                </span>{" "}
-                that empower diverse sectors across Oman.
-              </p>
-            </div>
+          <div className="mb-12">
+            <p className="content-reveal text-gray-500 text-lg leading-relaxed max-w-2xl font-light mb-6">
+              Under the{" "}
+              <span className="text-black font-semibold">
+                18+ years of professional leadership
+              </span>{" "}
+              of Muhammed Nakash, IES International (Est. 2021) has redefined
+              the Sultanate’s electromechanical landscape. We don't just execute
+              projects; we offer{" "}
+              <span className="text-black font-medium border-b-2 border-[#C69A59]/30">
+                Value Engineering
+              </span>{" "}
+              solutions that optimize costs without compromising technical
+              integrity.
+            </p>
+            <p className="content-reveal text-gray-500 text-lg leading-relaxed max-w-2xl font-light">
+              Our USP lies in our **Total Integration Approach**. While many
+              handle singular trades, we provide a unified workflow for **MEP,
+              HVAC, Fire & Safety, and ELV**, ensuring seamless technical
+              compliance and superior project lifecycles.
+            </p>
           </div>
 
-          {/* Key Pillars with Icons/Shapes */}
-          <div className="grid grid-cols-2 gap-12 mb-16 about-content-trigger">
-            <div className="content-reveal group">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-2 h-2 rounded-full bg-[#C69A59] group-hover:scale-150 transition-transform"></div>
-                <h4 className="text-lg font-sans font-bold">MEP Precision</h4>
-              </div>
-              <p className="text-xs text-gray-400 tracking-wide leading-relaxed">
-                Mechanical, Electrical, and Plumbing solutions tailored for
-                premium environments.
+          {/* Catchy USP Grid for Tech Professionals */}
+          <div className="grid grid-cols-2 gap-8 mb-12">
+            <div className="content-reveal border-l-2 border-[#C69A59] pl-6 py-2 group cursor-default">
+              <h4 className="text-sm font-black uppercase tracking-widest mb-1 text-[#161616]">
+                Turnkey Solutions
+              </h4>
+              <p className="text-[11px] text-gray-400">
+                Single-point accountability from design to final commissioning.
               </p>
             </div>
-            <div className="content-reveal group">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-2 h-2 rounded-full bg-[#161616] group-hover:scale-150 transition-transform"></div>
-                <h4 className="text-lg font-sans font-bold">HVAC & Safety</h4>
-              </div>
-              <p className="text-xs text-gray-400 tracking-wide leading-relaxed">
-                High-performance climate control and fire safety systems built
-                on integrity.
+            <div className="content-reveal border-l-2 border-black/10 pl-6 py-2 group cursor-default">
+              <h4 className="text-sm font-black uppercase tracking-widest mb-1 text-[#161616]">
+                Technical Integrity
+              </h4>
+              <p className="text-[11px] text-gray-400">
+                Strict adherence to International & Oman National Standards.
               </p>
             </div>
           </div>
 
           <div className="content-reveal">
-            <button className="group relative flex items-center gap-10 bg-transparent cursor-pointer">
-              <div className="relative w-16 h-16 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 group-hover:bg-[#161616]">
-                <span className="text-2xl transition-all duration-500 group-hover:text-white group-hover:translate-x-2">
+            <button className="group flex items-center gap-6 cursor-pointer">
+              <div className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 group-hover:bg-[#161616]">
+                <span className="text-xl transition-all group-hover:text-white group-hover:translate-x-1">
                   →
                 </span>
               </div>
-              <div className="flex flex-col items-start ">
-                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">
-                  Discover
-                </span>
-                <span className="text-sm font-bold uppercase tracking-[0.1em]">
-                  Learn our Legacy
-                </span>
-              </div>
+              <span className="text-xs font-black uppercase tracking-widest">
+                Our Engineering Heritage
+              </span>
             </button>
           </div>
         </div>
